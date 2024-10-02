@@ -27,23 +27,27 @@ int method(int i){
 ### 람다식 작성하기
 1. 메서드의 이름과 반환타입을 제거하고 매개변수 선언부와 몸통 {} 사이에 -> 를 추가한다.
 
-int max(int a, int b){<br>
-    return a > b ? a : b;<br>
-}<br>
+```java
+int max(int a, int b){
+    return a > b ? a : b;
+}
 
-**-->**
+-->
 
-~~int max~~(int a, int b) **->**{<br>
-    return a > b ? a : b;<br>
-}<br>
+(int a, int b) -> {
+    return a > b ? a : b;
+}
+```
 
 2. 반환값이 있는 메서드의 경우, return 문 대신 식으로 대신 가능 (식의 연산결과가 자동적으로 반환값, 이때 문장이 아닌 식이므로 끝에 세미콜론을 붙이지 않는다.)
 
+```java
 (int a, int b) -> { return a > b ? a : b; }
 
-**-->**
+-->
 
 (int a, int b) -> return a > b ? a : b
+```
 
 3. 람다식에 선언된 매개변수 타입은 추론이 가능한 경우 생략이 가능함 (대부분의 경우에 생략가능) (람다식에 반환타입이 없는 이유도 항상 추론이 가능해서)
 
